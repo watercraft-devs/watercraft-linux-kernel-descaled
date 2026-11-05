@@ -15,6 +15,14 @@ chmod +x build.sh
 # respond 'y' when prompted in order to proceed
 ```
 
+# Watercraft descaled kernel builds hosted on phosphene.xyz:
+
+https://phosphene.xyz/releases/kernel/
+
+# Installing from a Debian or Devuan style distro guide here:
+
+https://phosphene.xyz/posts/watercraft-descaled-linux-kernel/
+
 # License
 
 GPL 2.0
