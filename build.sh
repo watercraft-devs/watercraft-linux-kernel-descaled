@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-2.0
 # hail: basically a formatted alias for echo or printf, use it to announce stuff
 hail() {
         if [ -x /usr/bin/pad_cpp ]; then
