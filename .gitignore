@@ -1,4 +1,9 @@
-linux*
-.config
+linux*/
 artifacts
+.config
+*.deb
+*.buildinfo
+*.changes
+*.tar.*
+*.dsc
 baseline.txt
