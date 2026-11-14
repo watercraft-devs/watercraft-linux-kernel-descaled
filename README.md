@@ -4,7 +4,7 @@ This build script takes the CURRENT kernel on your build system, and "descales" 
 
 It also runs (optional but recommended) checks afterwards that absolutely no rust made it into the final build.
 
-Current Linux kernel version as of this commit: 6.12.115
+Current Linux kernel version as of this commit: 6.12.117
 
 
 # building
