@@ -99,9 +99,9 @@ ls
 tar -xOf "$basedir"/linux_"$kernelversion".debian.tar.xz debian/patches/series \
     > "$artifactsdir/patch-series.txt"
 
-cp .config "$artifactsdir/config"
+#cp .config "$artifactsdir/config"
 
-grep '^CONFIG_RUST' .config > "$artifactsdir/rust-probe.txt"
+#grep '^CONFIG_RUST' .config > "$artifactsdir/rust-probe.txt"
 
 
 sha256sum "$basedir"/linux-*.deb > "$artifactsdir/SHA256SUMS"
@@ -151,6 +151,18 @@ build() {
 case "$buildyn" in [Yy]|[Yy][Ee][Ss]) build ;;
         *) hail "Builder rejected the build from proceeding..." ;;
 esac
+
+cp .config "$artifactsdir/config"
+grep '^CONFIG_RUST' .config > "$artifactsdir/rust-probe.txt"
+
+
+for f in config rust-probe.txt patch-series.txt SHA256SUMS; do
+        if [[ ! -s "$artifactsdir/$f" ]]; then
+                hail "FAIL: artifact $f missing or empty"
+                exit 1
+        fi
+done
+
 
 # TODO replace "$kerneldir" with something that just strips everything after the - ONCE
 # then source from that variable in every following instance where it's needed
